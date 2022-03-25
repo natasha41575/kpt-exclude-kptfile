@@ -1,0 +1,13 @@
+apiVersion: fn.kpt.dev/v1alpha1
+kind: SetLabels
+metadata:
+  name: my-config
+labels:
+  color: orange
+  fruit: apple
+additionalLabelFields:
+  - kind: CustomResource
+    group: example.com
+    version: v1
+    create: true
+    path: metadata/labels

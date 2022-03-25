@@ -1,0 +1,13 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: example
+pipeline:
+  mutators:
+    - image: gcr.io/kpt-fn/set-labels:unstable
+      configPath: functionconfig.yaml
+      selectors:
+        - apiVersion: "batch/v1"
+        - apiVersion: "apps/v1"
+        - apiVersion: "v1"
+        - apiVersion: "example.com/v1"
